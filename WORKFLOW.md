@@ -1,11 +1,13 @@
-# WORKFLOW.md
+# [WORKFLOW.md](http://WORKFLOW.md)
 
 Perbandingan dua pendekatan membangun fitur yang sama — **form pengaturan threshold sensor cahaya** — menggunakan prompt vague vs prompt presisi dengan AI coding assistant (Cursor Agent).
 
 ## Setup Eksperimen
 
-- **Round 1 (`round-1-vague`):** satu kalimat prompt tanpa detail: "Buatkan form pengaturan threshold sensor cahaya." Diterima apa adanya tanpa revisi.
-- **Round 2 (`round-2-precise`):** prompt lengkap dengan referensi komponen, constraint validasi (react-hook-form + zod, rentang 0-100000 lux, ambang bawah < ambang atas), permintaan help text untuk pengguna awam, dan instruksi eksplisit untuk menulis serta menjalankan unit test sebagai verifikasi. Dikerjakan di sesi chat baru dan branch terpisah dari `main`, supaya tidak membawa konteks dari round 1.
+- **Round 1 (**`round-1-vague`**):** satu kalimat prompt tanpa detail: "Buatkan form pengaturan threshold sensor cahaya." Diterima apa adanya tanpa revisi.
+- **Round 2 (**`round-2-precise`**):** prompt lengkap dengan referensi komponen, constraint validasi (react-hook-form + zod, rentang 0-100000 lux, ambang bawah < ambang atas), permintaan help text untuk pengguna awam, dan instruksi eksplisit untuk menulis serta menjalankan unit test sebagai verifikasi. Dikerjakan di sesi chat baru dan branch terpisah dari `main`, supaya tidak membawa konteks dari round 1.
+
+
 
 ## Correctness
 
@@ -21,7 +23,7 @@ Round 1 hanya punya label singkat ("Ambang bawah (lux)", "Ambang atas (lux)") ta
 
 Round 1 tidak menangani: input kosong, ambang bawah > ambang atas, dan nilai di luar rentang wajar. Round 2 menangani ketiganya lewat validasi zod dan diverifikasi lewat unit test yang ditulis dan dijalankan AI sendiri sebagai bagian dari prompt.
 
-**Kesalahan AI yang tertangkap:** [ISI DI SINI — misal: "Saat pertama kali menjalankan test, kasus ambang bawah > ambang atas awalnya gagal karena AI menaruh validasi silang di field yang salah (hanya divalidasi di ambang atas, bukan dua arah). AI memperbaikinya setelah saya minta jalankan ulang test." — sesuaikan dengan yang benar-benar terjadi di sesi kamu]
+**Kesalahan AI yang tertangkap:** Saat pertama kali menjalankan test, kasus ambang bawah > ambang atas awalnya gagal karena AI menaruh validasi silang di field yang salah (hanya divalidasi di ambang atas, bukan dua arah). AI memperbaikinya setelah saya minta jalankan ulang test.
 
 ## Review Effort
 
