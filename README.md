@@ -19,17 +19,14 @@ Webapp untuk memantau data sensor cahaya (light sensor) secara real-time. Proyek
 
 ## Cara Menjalankan
 
+Repo ini masih di tahap scaffolding (README, `CLAUDE.md`, lisensi). Belum ada `package.json` atau kode aplikasi, jadi `npm install` / `npm run dev` belum tersedia.
+
 ```bash
-# Clone repo
-git clone https://github.com/username/nama-repo.git
-cd nama-repo
-
-# Install dependencies
-npm install
-
-# Jalankan aplikasi
-npm run dev
+git clone https://github.com/louvredev/FE-01.git
+cd FE-01
 ```
+
+Setelah frontend/backend ditambahkan, perintah install dan run akan dicantumkan di sini.
 
 ## Struktur Proyek
 
